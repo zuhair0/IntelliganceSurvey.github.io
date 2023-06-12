@@ -1,0 +1,12 @@
+F:\MCQS\IntelligenceTestModel\bin\Debug\net7.0\IntelligenceTestModel.deps.json
+F:\MCQS\IntelligenceTestModel\bin\Debug\net7.0\IntelligenceTestModel.dll
+F:\MCQS\IntelligenceTestModel\bin\Debug\net7.0\IntelligenceTestModel.pdb
+F:\MCQS\IntelligenceTestModel\obj\Debug\net7.0\IntelligenceTestModel.csproj.AssemblyReference.cache
+F:\MCQS\IntelligenceTestModel\obj\Debug\net7.0\IntelligenceTestModel.GeneratedMSBuildEditorConfig.editorconfig
+F:\MCQS\IntelligenceTestModel\obj\Debug\net7.0\IntelligenceTestModel.AssemblyInfoInputs.cache
+F:\MCQS\IntelligenceTestModel\obj\Debug\net7.0\IntelligenceTestModel.AssemblyInfo.cs
+F:\MCQS\IntelligenceTestModel\obj\Debug\net7.0\IntelligenceTestModel.csproj.CoreCompileInputs.cache
+F:\MCQS\IntelligenceTestModel\obj\Debug\net7.0\IntelligenceTestModel.dll
+F:\MCQS\IntelligenceTestModel\obj\Debug\net7.0\refint\IntelligenceTestModel.dll
+F:\MCQS\IntelligenceTestModel\obj\Debug\net7.0\IntelligenceTestModel.pdb
+F:\MCQS\IntelligenceTestModel\obj\Debug\net7.0\ref\IntelligenceTestModel.dll
