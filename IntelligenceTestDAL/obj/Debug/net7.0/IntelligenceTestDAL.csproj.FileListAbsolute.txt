@@ -1,0 +1,15 @@
+F:\MCQS\IntelligenceTestDAL\bin\Debug\net7.0\IntelligenceTestDAL.deps.json
+F:\MCQS\IntelligenceTestDAL\bin\Debug\net7.0\IntelligenceTestDAL.dll
+F:\MCQS\IntelligenceTestDAL\bin\Debug\net7.0\IntelligenceTestDAL.pdb
+F:\MCQS\IntelligenceTestDAL\bin\Debug\net7.0\IntelligenceTestModel.dll
+F:\MCQS\IntelligenceTestDAL\bin\Debug\net7.0\IntelligenceTestModel.pdb
+F:\MCQS\IntelligenceTestDAL\obj\Debug\net7.0\IntelligenceTestDAL.csproj.AssemblyReference.cache
+F:\MCQS\IntelligenceTestDAL\obj\Debug\net7.0\IntelligenceTestDAL.GeneratedMSBuildEditorConfig.editorconfig
+F:\MCQS\IntelligenceTestDAL\obj\Debug\net7.0\IntelligenceTestDAL.AssemblyInfoInputs.cache
+F:\MCQS\IntelligenceTestDAL\obj\Debug\net7.0\IntelligenceTestDAL.AssemblyInfo.cs
+F:\MCQS\IntelligenceTestDAL\obj\Debug\net7.0\IntelligenceTestDAL.csproj.CoreCompileInputs.cache
+F:\MCQS\IntelligenceTestDAL\obj\Debug\net7.0\IntelligenceTestDAL.csproj.CopyComplete
+F:\MCQS\IntelligenceTestDAL\obj\Debug\net7.0\IntelligenceTestDAL.dll
+F:\MCQS\IntelligenceTestDAL\obj\Debug\net7.0\refint\IntelligenceTestDAL.dll
+F:\MCQS\IntelligenceTestDAL\obj\Debug\net7.0\IntelligenceTestDAL.pdb
+F:\MCQS\IntelligenceTestDAL\obj\Debug\net7.0\ref\IntelligenceTestDAL.dll
