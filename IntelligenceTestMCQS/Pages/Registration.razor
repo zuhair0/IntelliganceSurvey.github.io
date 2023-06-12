@@ -1,0 +1,61 @@
+﻿@page "/register"
+@using IntelligenceTestModel;
+@using IntelligenceTestDAL;
+<link rel="stylesheet" href="/css/style.css"/>
+<div class="row">
+<div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
+<EditForm Model="registration" OnSubmit="Saveuser" >
+            <div class="mb-3 text-center c">
+                <h3>Registration</h3>
+            </div>
+    <div class="mb-2 c">
+        <label>Name</label>
+        <input type="text" class="form-control" @bind-value="registration.Name" required />
+    </div>
+    <div class="mb-2 c">
+        <label >Address</label>
+                <input type="text" class="form-control" @bind-value="registration.Address" required />
+    </div>
+    <div class="mb-2 c">
+        <label >Email</label>
+                <input type="text" class="form-control" @bind-value="registration.Email" required />
+    </div>
+    <div class="mb-2 c">
+        <label >Contact</label>
+                <input type="text" class="form-control" @bind-value="registration.Contact" required />
+    </div>
+    <div class="mb-2 c">
+        <label >Username</label>
+                <input type="text" class="form-control" @bind-value="registration.Username" required />
+    </div>
+    <div class="mb-2 c">
+        <label >Password</label>
+                <input type="text" class="form-control" @bind-value="registration.Password" required />
+    </div>
+    <div class="mb-3 c d-grid gap-2">
+    <button class="btn btn-success">
+        <a style="text-decoration:none; color:white;">Register</a>
+    </button>
+            </div>
+</EditForm>
+</div>
+</div>
+<br />
+<h4>@msg</h4>
+<h4 class="margin">Return to login page by <a href="">Click Here</a></h4>
+@code {
+    private string msg{ get; set; }
+    private RegistrationModel registration = new RegistrationModel();
+    private void Saveuser()
+    {
+        int i = RegistrationDAL.SaveUser(registration);
+        if (i == 1)
+        {
+            msg = "Registered Succesfully.";
+        }
+        else
+        {
+            msg = "Registration Failed.";
+        }
+    }
+}

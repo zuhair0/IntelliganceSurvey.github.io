@@ -1,0 +1,126 @@
+﻿@page "/result/{currentScore}/{NaturalisticScore}/{musicalScore}/{logicalScore}/{existentialScore}/{interpersonalScore}/{bodyScore}/{verbalScore}/{intrapersonalScore}/{visualScore}"
+@using IntelligenceTestDAL
+@using IntelligenceTestModel
+<style>
+    .scores{
+        margin-left:50px;
+        margin-bottom:10px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+</style>
+<h1 style="text-align:center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Results</h1>
+<h2 class="scores">Total Score: @currentScore</h2>
+<h4 class="scores">NaturalisticScore: @NaturalisticScore</h4>
+<h4 class="scores">Musical: @musicalScore</h4>
+<h4 class="scores">Logical: @logicalScore</h4>
+<h4 class="scores">Existential: @existentialScore</h4>
+<h4 class="scores">Interpersonal:@interpersonalScore</h4>
+<h4 class="scores">Body: @bodyScore</h4>
+<h4 class="scores">Verbal: @verbalScore</h4>
+<h4 class="scores">Intrapersonal: @intrapersonalScore</h4>
+<h4 class="scores">Visual: @visualScore</h4>
+<button class="btn btn-success scores" onclick="@HighScore" >
+    Show Fields
+</button>
+<h1 style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight:bold">@msg</h1>
+@code {
+    private string msg { get; set; }
+
+    [Parameter]
+    public string? currentScore { get; set; }
+    [Parameter]
+    public string? NaturalisticScore { get; set; }
+    [Parameter]
+    public string? musicalScore { get; set; }
+    [Parameter]
+    public string? logicalScore { get; set; }
+    [Parameter]
+    public string? existentialScore { get; set; }
+    [Parameter]
+    public string? interpersonalScore { get; set; }
+    [Parameter]
+    public string? bodyScore { get; set; }
+    [Parameter]
+    public string? verbalScore { get; set; }
+    [Parameter]
+    public string? intrapersonalScore { get; set; }
+    [Parameter]
+    public string? visualScore { get; set; }
+    private QuestionsModel questions = new QuestionsModel();
+    private List<int> list = new List<int>();
+    private void initialization()
+    {
+        questions.Score = int.Parse(currentScore);
+        questions.naturalisticScore = int.Parse(NaturalisticScore);
+        questions.musicalScore = int.Parse(musicalScore);
+        questions.logicalScore = int.Parse(logicalScore);
+        questions.existentialScore = int.Parse(existentialScore);
+        questions.interpersonalScore = int.Parse(interpersonalScore);
+        questions.bodyScore = int.Parse(bodyScore);
+        questions.verbalScore = int.Parse(verbalScore);
+        questions.intrapersonalScore = int.Parse(intrapersonalScore);
+        questions.visualScore = int.Parse(visualScore);
+    }
+    private void HighScore()
+    {
+        list.Add(int.Parse(NaturalisticScore));
+        list.Add(int.Parse(musicalScore));
+        list.Add(int.Parse(logicalScore));
+        list.Add(int.Parse(existentialScore));
+        list.Add(int.Parse(interpersonalScore));
+        list.Add(int.Parse(bodyScore));
+        list.Add(int.Parse(verbalScore));
+        list.Add(int.Parse(intrapersonalScore));
+        list.Add(int.Parse(visualScore));
+        //msg=list.Max().ToString();
+        if (list[0] >= list[1] && list[0] >= list[2] && list[0] >= list[3] && list[0] >= list[4] && list[0] >= list[5]
+        && list[0] >= list[6] && list[0] >= list[7] && list[0] >= list[8])
+        {
+            msg = "Your Naturalistic is excellent and you should have to study environmental science, biology or ecology, population biology, and epidemiology";
+        } 
+        if (list[1] >= list[0] && list[1] >= list[2] && list[1] >= list[3] && list[1] >= list[4] && list[1] >= list[5]
+        && list[1] >= list[6] && list[1] >= list[7] && list[1] >= list[8])
+        {
+            msg = "Your Musical is excellent and you should have to study Arts managment, popular music, jazz stuies, music history, musical theater, music industry, music technology.";
+        }
+        if (list[2] >= list[0] && list[2] >= list[1] && list[2] >= list[3] && list[2] >= list[4] && list[2] >= list[5]
+        && list[2] >= list[6] && list[2] >= list[7] && list[2] >= list[8])
+        {
+            msg = "Your logical is excellent and you should study math, science, law, philosophy, computer science, ontology, and psychology.";
+        }
+        if (list[3] >= list[0] && list[3] >= list[1] && list[3] >= list[2] && list[3] >= list[4] && list[3] >= list[5]
+        && list[3] >= list[6] && list[3] >= list[7] && list[3] >= list[8])
+        {
+            msg = "Your existential is excellent and you should study Philosophy Course, Humanistic Counselling and Psychotherapy PGDip.";
+        }
+        if (list[4] >= list[0] && list[4] >= list[1] && list[4] >= list[2] && list[4] >= list[3] && list[4] >= list[5]
+        && list[4] >= list[6] && list[4] >= list[7] && list[4] >= list[8])
+        {
+            msg = "Your interpersonal is excellent and you should study Management & Leadership, Finance, Entrepreneurship, Marketing, Strategic Management, Business Intelligence, Human Resources";
+        }
+        if (list[5] >= list[0] && list[5] >= list[1] && list[5] >= list[2] && list[5] >= list[3] && list[5] >= list[4]
+        && list[5] >= list[6] && list[5] >= list[7] && list[5] >= list[8])
+        {
+            msg = "Your body is excellent and you should study Anatomy and Physiology";
+        }
+        if (list[6] >= list[0] && list[6] >= list[1] && list[6] >= list[2] && list[6] >= list[3] && list[6] >= list[4]
+        && list[6] >= list[5] && list[6] >= list[7] && list[6] >= list[8])
+        {
+            msg = "Your verbal is excellent and you should study English, communication skills, Advertising and marketing, Journalism";
+        }
+        if (list[7] >= list[0] && list[7] >= list[1] && list[7] >= list[2] && list[7] >= list[3] && list[7] >= list[4]
+        && list[7] >= list[5] && list[7] >= list[6] && list[7] >= list[8])
+        {
+            msg = "Your intrapersonel is excellent and you should study intrapersonal Communication and Development Key Traits";
+        }
+        if (list[8] >= list[0] && list[8] >= list[1] && list[8] >= list[2] && list[8] >= list[3] && list[8] >= list[4]
+        && list[8] >= list[5] && list[8] >= list[6] && list[8] >= list[7])
+        {
+            msg = "Your visual is excellent and you should study graphic designing, fine arts";
+        }
+        if(list.Max()==0)
+        {
+            msg = "You Dont select any option.";
+        }
+    }
+}

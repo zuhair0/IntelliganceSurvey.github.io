@@ -1,0 +1,14 @@
+﻿body {
+    background-image: url(inti.jpg);
+    background-size: cover;
+    background-attachment:fixed
+}
+.margin {
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color:white
+}
+.c{
+    color:white
+}

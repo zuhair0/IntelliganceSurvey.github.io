@@ -1,0 +1,85 @@
+{
+  "Files": [
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\IntelligenceTestMCQS.bundle.scp.css",
+      "PackagePath": "staticwebassets\\IntelligenceTestMCQS.bundle.scp.css"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\css\\inti.jpg",
+      "PackagePath": "staticwebassets\\css\\inti.jpg"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "F:\\MCQS\\IntelligenceTestMCQS\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.IntelligenceTestMCQS.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.IntelligenceTestMCQS.props",
+      "PackagePath": "build\\IntelligenceTestMCQS.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.IntelligenceTestMCQS.props",
+      "PackagePath": "buildMultiTargeting\\IntelligenceTestMCQS.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.IntelligenceTestMCQS.props",
+      "PackagePath": "buildTransitive\\IntelligenceTestMCQS.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

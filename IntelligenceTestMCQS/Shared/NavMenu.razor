@@ -1,0 +1,115 @@
+﻿@using BlazorServerAuthenticationAndAuthorization.Authentication;
+@inject AuthenticationStateProvider authStateProvider
+@inject NavigationManager navManager
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <nav class="navbar navbar-expand-lg bg-body" style="margin:10px">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="margin-left:40px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:large">Welcome to Intelligence Test</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <AuthorizeView Roles="User">
+                    <Authorized>
+                        <div class="nav-item px-3">
+                            <NavLink class="nav-link" href="question">
+                                <span class="oi oi-plus" aria-hidden="true"></span> Questions
+                            </NavLink>
+                        </div>
+                        <a style="margin-left:850px" @onclick="Logout" href="javascript:void(0)" class="nav-link active text-white bg-danger">Logout</a>
+                    </Authorized>
+                    <NotAuthorized>
+                        <div>
+                            <a style="margin-left:950px" class="nav-link active text-white nav justify-content-end bg-success" href=""><b>Login / Register</b></a>
+                        </div>
+                    </NotAuthorized>
+                </AuthorizeView>
+            </div>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+    private async Task Logout()
+    {
+        var customAuthStateProvider = (CustomAuthenticationStateProvider)authStateProvider;
+        await customAuthStateProvider.UpdateAuthenticationState(null);
+        navManager.NavigateTo("/", true);
+    }
+}
+
+@*<AuthorizeView Roles="User">
+    <Authorized>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="question">
+                <span class="oi oi-plus" aria-hidden="true"></span> Questions
+            </NavLink>
+        </div>
+        <a @onclick="Logout" href="javascript:void(0)" class="nav-link active text-white bg-danger">Logout</a>
+    </Authorized>
+    <NotAuthorized>
+        <div>
+            <a class="nav-link active text-white nav justify-content-end bg-success" href="login"><b>Login / Register</b></a>
+        </div>
+    </NotAuthorized>
+</AuthorizeView>*@
+
+
+@*<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">IntelligenceTestMCQS</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="counter">
+                <span class="oi oi-plus" aria-hidden="true"></span> Counter
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="fetchdata">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="question">
+                <span class="oi oi-plus" aria-hidden="true"></span> question
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="login">
+                <span class="oi oi-plus" aria-hidden="true"></span> Login
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
+*@

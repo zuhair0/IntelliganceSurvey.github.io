@@ -1,0 +1,130 @@
+﻿@page "/question"
+@inject IQuestions ques;
+@using IntelligenceTestModel
+@using IntelligenceTestDAL
+<link rel="stylesheet" href="/css/style.css" />
+<h1 class="c" style="text-align:center; margin-bottom:40px;margin-top:30px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Intelligence Survey Questions</h1>
+@if (questions == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    int quizIndex = 0;
+    @foreach(var item in questions)
+    {
+        <section style="margin-left:40px">
+            <h3 class="c" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">@(quizIndex+1). @item.QuestionDetail</h3>
+            <h3 class="c" style="font-family:'Times New Roman', Times, serif">@item.QuestionUrdu</h3>
+            <div class="form-check c">
+                @{
+                    int choiceIndex = 0;
+                    quizScores.Add(0);
+                    NatiralisticScoreList.Add(0);
+                    MusicalScoreList.Add(0);
+                    LogicalScoreList.Add(0);
+                    ExistentialScoreList.Add(0);
+                    InterpersonelScoreList.Add(0);
+                    BodyScoreList.Add(0);
+                    VerbalScoreList.Add(0);
+                    IntrapersonalScoreList.Add(0);
+                    VisualScoreList.Add(0);
+                }
+                @foreach(var choice in item.choice)
+                {
+                    int currentQuizIndex = quizIndex;
+                    <input class="form-check-input" type="radio" name="@quizIndex" value="@choiceIndex" @onchange="@((eventArgs) => UpdateScore(Convert.ToInt32(eventArgs.Value), currentQuizIndex))" />@choice<br>
+                    choiceIndex++;
+                }
+                <br />
+            </div>
+        </section>
+        quizIndex++;
+    }
+    <button class="btn btn-success" style="margin-left:60px;margin-bottom:50px">
+        <a href="result/@currentScore/@NaturalisticScore/@MusicalScore/@LogicalScore/@ExistentialScore/@interpersonalScore/@bodyScore/@verbalScore/@intrapersonalScore/@visualScore" style="text-decoration:none; color:white">Submit</a>
+    </button>
+}
+@code {
+    int currentScore = 0;
+    int NaturalisticScore = 0;
+    int MusicalScore = 0;
+    int LogicalScore = 0;
+    int ExistentialScore = 0;
+    int interpersonalScore = 0;
+    int bodyScore = 0;
+    int verbalScore = 0;
+    int intrapersonalScore = 0;
+    int visualScore = 0;
+    List<int> quizScores = new List<int>();
+    List<int> NatiralisticScoreList = new List<int>();
+    List<int> MusicalScoreList = new List<int>();
+    List<int> LogicalScoreList = new List<int>();
+    List<int> ExistentialScoreList = new List<int>();
+    List<int> InterpersonelScoreList = new List<int>();
+    List<int> BodyScoreList = new List<int>();
+    List<int> VerbalScoreList = new List<int>();
+    List<int> IntrapersonalScoreList = new List<int>();
+    List<int> VisualScoreList = new List<int>();
+    List<QuestionsModel> questions = new List<QuestionsModel>();
+    protected override async Task OnInitializedAsync()
+    {
+        questions = await ques.GetQuestions();
+    }
+    void UpdateScore(int chosenAnswerIndex, int quizIndex)
+    {
+        var quizItem = questions[quizIndex];
+
+        if (chosenAnswerIndex == 0)
+        {
+            quizScores[quizIndex] = quizItem.Score=1;
+            if (quizIndex >= 0 && quizIndex < 10) { NatiralisticScoreList[quizIndex] = quizItem.naturalisticScore = 1; }
+            if (quizIndex >= 10 && quizIndex < 20) { MusicalScoreList[quizIndex] = quizItem.musicalScore = 1; }
+            if (quizIndex >= 10 && quizIndex < 20) { LogicalScoreList[quizIndex] = quizItem.logicalScore = 1; }
+            if (quizIndex >= 30 && quizIndex < 40) { ExistentialScoreList[quizIndex] = quizItem.existentialScore = 1; }
+            if (quizIndex >= 40 && quizIndex < 50) { InterpersonelScoreList[quizIndex] = quizItem.interpersonalScore = 1; }
+            if (quizIndex >= 50 && quizIndex < 60) { BodyScoreList[quizIndex] = quizItem.bodyScore = 1; }
+            if (quizIndex >= 60 && quizIndex < 70) { VerbalScoreList[quizIndex] = quizItem.verbalScore = 1; }
+            if (quizIndex >= 70 && quizIndex < 80) { IntrapersonalScoreList[quizIndex] = quizItem.intrapersonalScore = 1; }
+            if (quizIndex >= 80 && quizIndex < 90) { VisualScoreList[quizIndex] = quizItem.visualScore = 1; }
+        }
+        if (chosenAnswerIndex == 1)
+        {
+            quizScores[quizIndex] = quizItem.Score = 0;
+            if (quizIndex >= 0 && quizIndex < 10) { NatiralisticScoreList[quizIndex] = quizItem.naturalisticScore = 0; }
+            if (quizIndex >= 10 && quizIndex < 20) { MusicalScoreList[quizIndex] = quizItem.musicalScore = 0; }
+            if (quizIndex >= 20 && quizIndex < 30) { LogicalScoreList[quizIndex] = quizItem.logicalScore = 0; }
+            if (quizIndex >= 30 && quizIndex < 40) { ExistentialScoreList[quizIndex] = quizItem.existentialScore = 0; }
+            if (quizIndex >= 40 && quizIndex < 50) { InterpersonelScoreList[quizIndex] = quizItem.interpersonalScore = 0; }
+            if (quizIndex >= 50 && quizIndex < 60) { BodyScoreList[quizIndex] = quizItem.bodyScore = 0; }
+            if (quizIndex >= 60 && quizIndex < 70) { VerbalScoreList[quizIndex] = quizItem.verbalScore = 0; }
+            if (quizIndex >= 70 && quizIndex < 80) { IntrapersonalScoreList[quizIndex] = quizItem.intrapersonalScore = 0; }
+            if (quizIndex >= 80 && quizIndex < 90) { VisualScoreList[quizIndex] = quizItem.visualScore = 0; }
+        }
+        currentScore = quizScores.Sum();
+        NaturalisticScore = NatiralisticScoreList.Sum();
+        MusicalScore = MusicalScoreList.Sum();
+        LogicalScore = LogicalScoreList.Sum();
+        ExistentialScore = ExistentialScoreList.Sum();
+        interpersonalScore = InterpersonelScoreList.Sum();
+        bodyScore = BodyScoreList.Sum();
+        verbalScore = VerbalScoreList.Sum();
+        intrapersonalScore = IntrapersonalScoreList.Sum();
+        visualScore = VisualScoreList.Sum();
+    }
+    //void Show(int currentScore)
+    //{
+    //    if (currentScore >= 80)
+    //    {
+    //        msg = "Excellent";
+    //    }
+    //    if (currentScore >= 70 && currentScore<=60)
+    //    {
+    //        msg = "very good";
+    //    }
+    //    if (currentScore >= 60 && currentScore<=50)
+    //    {
+    //        msg = "good";
+    //    }
+    //}
+}
